@@ -11,10 +11,9 @@ namespace Gtt.Labels.UI.WebService.Labels.IndividualLabels
         private readonly char GS = Convert.ToChar(29);
         private readonly char EOT = Convert.ToChar(4);
 
-        public EZIndividualLabel(string productType, long transmissionID, string revision, string serialNo, int julianDay, int year, string externalReference, string station, string ratio, string lineCode, string origen)
+        public EZIndividualLabel(string productType, long transmissionID, string revision, string serialNo, int julianDay, int year, string externalReference, string station, string ratio, string lineCode)
         {
             var errors = new List<string>();
-            
             if (transmissionID == 0) errors.Add("El número de transmisión no fue especificado.");
             if (year == 0) errors.Add("El año no fue especificado.");
             if (julianDay == 0) errors.Add("La fecha juliana no fue especificada.");
@@ -36,23 +35,15 @@ namespace Gtt.Labels.UI.WebService.Labels.IndividualLabels
             this.BeforePrint += (s, e) =>
             {
                 var series = serialNo.ToUpper().Split('-');
-                if(series[0].Trim() == "87245")
-                {
-                //Esto se agrego debido a que Jhon Deere no quiere que en las etiquetas de transmision este el logotipo de GT
-                 xrPictureBox1.Image = null;  
-                }
                 if (series.Length > 0 && series[0].StartsWith("GT"))
                 {
                     series[0] = series[0].Replace("GT", "");
                 }
                 txtRefExt.Text = $"(P) {externalReference}";
-                txtInternalID.Text = $"(S) {productType.ToUpper()}{transmissionID}";
-                //txtInternalID.Text = $"(S) WB{transmissionID}";
-                //barCode.Text = $"[)>{RS}06{GS}SWB{transmissionID}{GS}P{externalReference}{GS}ZGT{GS}1T{series[0].Trim()}{GS}2T{revision}{GS}3T{julianDay}{year.ToString().Substring(2)}{RS}{EOT}";
-                barCode.Text = ($"[)>{RS}06{GS}SWB{transmissionID}{GS}P{externalReference}{GS}ZGT{GS}1T{series[0].Trim()}{GS}2T{revision}{GS}3T{julianDay}{year.ToString().Substring(2)}{RS}{EOT}").ToUpper();
+                //txtInternalID.Text = $"(S) {productType.ToUpper()}{transmissionID}";
+                txtInternalID.Text = $"(S) WB{transmissionID}";
+                barCode.Text = $"[)>{RS}06{GS}SWB{transmissionID}{GS}P{externalReference}{GS}ZGT{GS}1T{series[0].Trim()}{GS}2T{revision}{GS}3T{julianDay}{year.ToString().Substring(2)}{RS}{EOT}";
                 txtSerial.Text = $"{series[0].Trim()}{ratio}{julianDay}{year.ToString()[3]}{lineCode}{station}";
-                if (string.IsNullOrWhiteSpace(origen)) txtOrigen.Text = $"";
-                txtOrigen.Text = $"{origen}";
             };
         }
     }

@@ -30,7 +30,7 @@ namespace Gtt.Labels.UI.WebService.Labels.IndividualLabels
             {
                 string[] series = serialNo.Split('-');
                 txtRefExt.Text = $"(P) {externalReference.TrimEnd()}";
-                txtInternalID.Text = $"(S) {transmissionID}";
+                txtInternalID.Text = $"(S) WB{transmissionID}";
                 barCode.Text = $"[)>{RS}06{GS}SWB{transmissionID}{GS}P{externalReference.TrimEnd()}{GS}ZGT{GS}1T{series[0].Trim()}{GS}2T{revision}{GS}3T{julianDay}{year.ToString().Substring(2)}{RS}{EOT}";
             };
         }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EZIndividualLabel01));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EZIndividualLabel));
             DevExpress.XtraPrinting.BarCode.DataMatrixGS1Generator dataMatrixGS1Generator1 = new DevExpress.XtraPrinting.BarCode.DataMatrixGS1Generator();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
@@ -38,7 +38,6 @@
             this.txtRefExt = new DevExpress.XtraReports.UI.XRLabel();
             this.barCode = new DevExpress.XtraReports.UI.XRBarCode();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.txtOrigen = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
@@ -51,7 +50,6 @@
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.txtOrigen,
             this.xrPictureBox1,
             this.txtInternalID,
             this.txtSerial,
@@ -67,7 +65,7 @@
             this.xrPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox1.Image")));
             this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 14.71737F);
             this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(39.12506F, 39.2124F);
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(23.50006F, 21.45833F);
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             // 
             // txtInternalID
@@ -75,7 +73,7 @@
             this.txtInternalID.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.txtInternalID.CanGrow = false;
             this.txtInternalID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.txtInternalID.LocationFloat = new DevExpress.Utils.PointFloat(39.12506F, 36.17571F);
+            this.txtInternalID.LocationFloat = new DevExpress.Utils.PointFloat(23.50006F, 36.1757F);
             this.txtInternalID.Name = "txtInternalID";
             this.txtInternalID.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.txtInternalID.SizeF = new System.Drawing.SizeF(97.85834F, 17.75406F);
@@ -89,7 +87,7 @@
             // txtSerial
             // 
             this.txtSerial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.txtSerial.LocationFloat = new DevExpress.Utils.PointFloat(20.00001F, 53.92978F);
+            this.txtSerial.LocationFloat = new DevExpress.Utils.PointFloat(4.374998F, 53.92976F);
             this.txtSerial.Name = "txtSerial";
             this.txtSerial.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.txtSerial.SizeF = new System.Drawing.SizeF(116.9834F, 21.11193F);
@@ -103,7 +101,7 @@
             this.txtRefExt.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.txtRefExt.CanGrow = false;
             this.txtRefExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.txtRefExt.LocationFloat = new DevExpress.Utils.PointFloat(39.12506F, 14.71737F);
+            this.txtRefExt.LocationFloat = new DevExpress.Utils.PointFloat(23.50006F, 14.71736F);
             this.txtRefExt.Name = "txtRefExt";
             this.txtRefExt.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.txtRefExt.SizeF = new System.Drawing.SizeF(97.85834F, 21.45834F);
@@ -119,12 +117,12 @@
             this.barCode.Alignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify;
             this.barCode.AutoModule = true;
             this.barCode.Font = new System.Drawing.Font("Times New Roman", 2F);
-            this.barCode.LocationFloat = new DevExpress.Utils.PointFloat(136.9834F, 14.71737F);
+            this.barCode.LocationFloat = new DevExpress.Utils.PointFloat(121.3584F, 14.71737F);
             this.barCode.Module = 1F;
             this.barCode.Name = "barCode";
             this.barCode.Padding = new DevExpress.XtraPrinting.PaddingInfo(1, 1, 0, 0, 100F);
             this.barCode.ShowText = false;
-            this.barCode.SizeF = new System.Drawing.SizeF(49.47495F, 49.90767F);
+            this.barCode.SizeF = new System.Drawing.SizeF(68.64159F, 49.90767F);
             this.barCode.StylePriority.UseFont = false;
             this.barCode.StylePriority.UsePadding = false;
             dataMatrixGS1Generator1.MatrixSize = DevExpress.XtraPrinting.BarCode.DataMatrixSize.Matrix26x26;
@@ -137,22 +135,6 @@
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // txtOrigen
-            // 
-            this.txtOrigen.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.txtOrigen.CanGrow = false;
-            this.txtOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.txtOrigen.LocationFloat = new DevExpress.Utils.PointFloat(39.12506F, 0F);
-            this.txtOrigen.Name = "txtOrigen";
-            this.txtOrigen.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.txtOrigen.SizeF = new System.Drawing.SizeF(97.85834F, 14.71737F);
-            this.txtOrigen.StylePriority.UseBorders = false;
-            this.txtOrigen.StylePriority.UseFont = false;
-            this.txtOrigen.StylePriority.UseTextAlignment = false;
-            this.txtOrigen.Text = "(O) ";
-            this.txtOrigen.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.txtOrigen.WordWrap = false;
             // 
             // EZIndividualLabel
             // 
@@ -180,6 +162,5 @@
         private DevExpress.XtraReports.UI.XRLabel txtSerial;
         private DevExpress.XtraReports.UI.XRLabel txtRefExt;
         private DevExpress.XtraReports.UI.XRBarCode barCode;
-        private DevExpress.XtraReports.UI.XRLabel txtOrigen;
     }
 }

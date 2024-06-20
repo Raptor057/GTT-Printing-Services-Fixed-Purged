@@ -53,12 +53,12 @@
             this.barCode.Alignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify;
             this.barCode.AutoModule = true;
             this.barCode.Font = new System.Drawing.Font("Times New Roman", 2F);
-            this.barCode.LocationFloat = new DevExpress.Utils.PointFloat(77.78468F, 15.74212F);
+            this.barCode.LocationFloat = new DevExpress.Utils.PointFloat(95.77985F, 15.74212F);
             this.barCode.Module = 1F;
             this.barCode.Name = "barCode";
             this.barCode.Padding = new DevExpress.XtraPrinting.PaddingInfo(1, 1, 0, 0, 100F);
             this.barCode.ShowText = false;
-            this.barCode.SizeF = new System.Drawing.SizeF(67.98254F, 34.39075F);
+            this.barCode.SizeF = new System.Drawing.SizeF(49.98737F, 34.39075F);
             this.barCode.StylePriority.UseFont = false;
             this.barCode.StylePriority.UsePadding = false;
             dataMatrixGS1Generator1.MatrixSize = DevExpress.XtraPrinting.BarCode.DataMatrixSize.Matrix26x26;
@@ -79,10 +79,10 @@
             this.txtRefExt.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.txtRefExt.CanGrow = false;
             this.txtRefExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.txtRefExt.LocationFloat = new DevExpress.Utils.PointFloat(0F, 4.742129F);
+            this.txtRefExt.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 4.74213F);
             this.txtRefExt.Name = "txtRefExt";
             this.txtRefExt.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.txtRefExt.SizeF = new System.Drawing.SizeF(67.78467F, 16.99999F);
+            this.txtRefExt.SizeF = new System.Drawing.SizeF(87.81673F, 16.99999F);
             this.txtRefExt.StylePriority.UseBorders = false;
             this.txtRefExt.StylePriority.UseFont = false;
             this.txtRefExt.StylePriority.UseTextAlignment = false;
@@ -95,10 +95,10 @@
             this.txtInternalID.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.txtInternalID.CanGrow = false;
             this.txtInternalID.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
-            this.txtInternalID.LocationFloat = new DevExpress.Utils.PointFloat(0F, 21.74212F);
+            this.txtInternalID.LocationFloat = new DevExpress.Utils.PointFloat(17.66673F, 23.13287F);
             this.txtInternalID.Name = "txtInternalID";
             this.txtInternalID.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.txtInternalID.SizeF = new System.Drawing.SizeF(67.78467F, 10F);
+            this.txtInternalID.SizeF = new System.Drawing.SizeF(80.15F, 10F);
             this.txtInternalID.StylePriority.UseBorders = false;
             this.txtInternalID.StylePriority.UseFont = false;
             this.txtInternalID.StylePriority.UseTextAlignment = false;
@@ -120,7 +120,7 @@
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // WalkBehind2
+            // wb2
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,

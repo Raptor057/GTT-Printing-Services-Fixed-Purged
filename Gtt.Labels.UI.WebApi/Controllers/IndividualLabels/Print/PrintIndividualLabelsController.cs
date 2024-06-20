@@ -49,15 +49,10 @@ namespace Gtt.Labels.UI.WebApi.Controllers.IndividualLabels.Print
             return string.Compare(productType, "RT", true) == 0;
         }
 
-        //03 / 23 / 2023 RA: Nuevo agregado para Frameless 
+        //Nuevo agregado para Frameless 
         private static bool IsFL(string productType)
         {
-            return string.Compare(productType, "ME FL", true) == 0;
-        }
-        //03 / 29 / 2023 RA: Nuevo agregado para Motores
-        private static bool IsMT(string productType)
-        {
-            return string.Compare(productType, "MT", true) == 0;
+            return string.Compare(productType, "FL", true) == 0;
         }
 
         [HttpPost, Route("productlines/{line}/individuallabels/{productType}")]
@@ -79,8 +74,7 @@ namespace Gtt.Labels.UI.WebApi.Controllers.IndividualLabels.Print
             try
             {
                 XtraReport labelReport;
-                //03 / 29 / 2023 RA: Nuevo agregado IsMT
-                if (IsWalkBehind(productType) || IsMT(productType))
+                if (IsWalkBehind(productType))
                 {
                     if (request.IsDoubleLid)
                     {
@@ -88,37 +82,28 @@ namespace Gtt.Labels.UI.WebApi.Controllers.IndividualLabels.Print
                     }
                     else
                     {
-                        labelReport = new WalkBehind(request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference, request.Station, request.Ratio, request.LineCode, request.Origen);
+                        labelReport = new WalkBehind(request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference, request.Station, request.Ratio, request.LineCode);
                     }
                 }
                 else if (IsRider(productType))
                 {
                     labelReport = new Ryder(request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference);
                 }
-                else if (IsEZ(productType) || IsRE(productType) || IsRS(productType))
+                else if (IsEZ(productType) || IsRE(productType) || IsRT(productType) || IsRS(productType))
                 {
-                    //Se comento esto para redireccionar las etis originales de EZ a otra nueva ETI que contenga las patentes.
-
-                    //    labelReport = new EZIndividualLabel(productType, request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference, request.Station, request.Ratio, request.LineCode, request.Origen);
-                        labelReport = new EZIndividualLabel01(productType, request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference, request.Station, request.Ratio, request.LineCode, request.Origen, 
-                            request.Patente1, request.Patente2, request.Patente3, request.Patente4, request.Patente5, request.Patente6,
-                        request.Patente7, request.Patente8);
+                    labelReport = new EZIndividualLabel(productType, request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference, request.Station, request.Ratio, request.LineCode);
                 }
-                else if (IsRT(productType))
-                {
-                    //Agregado el dia 04/04/2024 
-                    //Solicitado por Yadira Gracia y Fabien Guerrier
-                    labelReport = new WalkBehind2(request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference);
-                }
-                //   03/23/2023 - RA: Se agrego para poner las patentes en las etiquetas, Nuevo agregado para Frameless 
+                //Nuevo agregado para Frameless 
                 else if (IsFL(productType))
                 {
                     labelReport = new FramelessPatentLabel(productType, request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference, 
-                        request.Station, request.Ratio, request.LineCode, request.Patente1, request.Patente2, request.Patente3, request.Patente4, request.Patente5, request.Patente6, 
-                        request.Patente7, request.Patente8);
+                        request.Station, request.Ratio, request.LineCode, request.Patent1, request.Patent2, request.Patent3, request.Patent4, request.Patent5, request.Patent6, 
+                        request.Patent7, request.Patent8);
                 }
                 else
                 {
+
+
                     return Request.CreateResponse(HttpStatusCode.NotFound, $"El tipo de producto \"{productType}\" no es válido.");
                 }
 
