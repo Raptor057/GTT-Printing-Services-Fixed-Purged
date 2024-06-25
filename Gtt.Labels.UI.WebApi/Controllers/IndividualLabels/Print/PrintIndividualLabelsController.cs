@@ -89,16 +89,36 @@ namespace Gtt.Labels.UI.WebApi.Controllers.IndividualLabels.Print
                 {
                     labelReport = new Ryder(request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference);
                 }
-                else if (IsEZ(productType) || IsRE(productType) || IsRT(productType) || IsRS(productType))
+
+                else if (IsEZ(productType) || IsRE(productType) || IsRS(productType))
                 {
-                    labelReport = new EZIndividualLabel(productType, request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference, request.Station, request.Ratio, request.LineCode);
+                    //Se comento esto para redireccionar las etis originales de EZ a otra nueva ETI que contenga las patentes.
+
+                    //    labelReport = new EZIndividualLabel(productType, request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference, request.Station, request.Ratio, request.LineCode, request.Origen);
+                    labelReport = new EZIndividualLabel01(productType, request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference, request.Station, request.Ratio, request.LineCode, request.Origen,
+                        request.Patente1, request.Patente2, request.Patente3, request.Patente4, request.Patente5, request.Patente6,
+                    request.Patente7, request.Patente8);
                 }
+                else if (IsRT(productType))
+                {
+                    //Agregado el dia 04/04/2024 
+                    //Solicitado por Yadira Gracia y Fabien Guerrier
+                    labelReport = new WalkBehind2(request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference);
+                }
+
+                #region OLD
+                //else if (IsEZ(productType) || IsRE(productType) || IsRT(productType) || IsRS(productType))
+                //{
+                //    labelReport = new EZIndividualLabel(productType, request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference, request.Station, request.Ratio, request.LineCode);
+                //}
+                #endregion
+
                 //Nuevo agregado para Frameless 
                 else if (IsFL(productType))
                 {
                     labelReport = new FramelessPatentLabel(productType, request.FinishGoodID, request.Revision, request.SerialNo, request.JulianDay, request.Year, request.ExternalReference, 
-                        request.Station, request.Ratio, request.LineCode, request.Patent1, request.Patent2, request.Patent3, request.Patent4, request.Patent5, request.Patent6, 
-                        request.Patent7, request.Patent8);
+                        request.Station, request.Ratio, request.LineCode, request.Patente1, request.Patente2, request.Patente3, request.Patente4, request.Patente5, request.Patente6, 
+                        request.Patente7, request.Patente8);
                 }
                 else
                 {

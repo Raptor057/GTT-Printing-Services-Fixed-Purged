@@ -194,6 +194,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Labels\IndividualLabels\EZIndividualLabel01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Labels\IndividualLabels\EZIndividualLabel01.designer.cs">
+      <DependentUpon>EZIndividualLabel01.cs</DependentUpon>
+    </Compile>
     <Compile Include="Labels\IndividualLabels\FramelessPatentLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -265,6 +271,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Labels\IndividualLabels\EZIndividualLabel01.resx">
+      <DependentUpon>EZIndividualLabel01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Labels\IndividualLabels\FramelessPatentLabel.resx">
       <DependentUpon>FramelessPatentLabel.cs</DependentUpon>
     </EmbeddedResource>

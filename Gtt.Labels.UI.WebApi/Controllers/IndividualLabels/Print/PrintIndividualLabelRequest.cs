@@ -24,16 +24,19 @@
 
         public int Year { get; set; }
 
+        //   03/22/2023 - RA: Se agrego para poner el Origen de las etiquetas
+        public string Origen { get; set; }
+
         #region Nuevo agregado para Frameless 
-        //Nuevo agregado para Frameless
-        public string Patent1 { get; set; }
-        public string Patent2 { get; set; }
-        public string Patent3 { get; set; }
-        public string Patent4 { get; set; }
-        public string Patent5 { get; set; }
-        public string Patent6 { get; set; }
-        public string Patent7 { get; set; }
-        public string Patent8 { get; set; }
+        //  03/22/2023 - RA: Nuevo agregado para Frameless
+        public string Patente1 { get; set; }
+        public string Patente2 { get; set; }
+        public string Patente3 { get; set; }
+        public string Patente4 { get; set; }
+        public string Patente5 { get; set; }
+        public string Patente6 { get; set; }
+        public string Patente7 { get; set; }
+        public string Patente8 { get; set; }
         #endregion
     }
 }
